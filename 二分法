@@ -1,0 +1,26 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+float Oper(float x)
+{
+    return x*x*x-x-1;
+}
+int main()
+{
+    float a,b,c,x;
+    cin>>a>>b>>c;
+    while(fabs(b-a)>=c)
+    {
+        x=(a+b)/2;
+        if(Oper(a)*Oper(x)<0)
+        {
+            b=x;
+        }
+        else
+        {
+            a=x;
+        }
+    }
+    cout << "满足要求的值是：" <<x<< endl;
+    return 0;
+}
